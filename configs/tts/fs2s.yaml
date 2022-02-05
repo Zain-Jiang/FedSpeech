@@ -1,0 +1,34 @@
+base_config: configs/tts/pwg.yaml
+arch: '8 8 8 8 8 8 8 8'
+max_samples: 20480
+endless_ds: true
+
+use_aux_mel_loss: true
+use_pitch_embed: true
+use_energy_embed: true
+dropout: 0.2
+
+generator_params:
+  in_channels: 1        # Number of input channels.
+  out_channels: 1       # Number of output channels.
+  kernel_size: 3        # Kernel size of dilated convolution.
+  layers: 30            # Number of residual block layers.
+  stacks: 3             # Number of stacks i.e., dilation cycles.
+  residual_channels: 64 # Number of channels in residual conv.
+  gate_channels: 128    # Number of channels in gated conv.
+  skip_channels: 64     # Number of channels in skip conv.
+  aux_channels: 80      # Number of channels for auxiliary feature conv.
+  # Must be the same as num_mels.
+  aux_context_window: 2 # Context window size for auxiliary feature.
+  # If set to 2, previous 2 and future 2 frames will be considered.
+  dropout: 0.0          # Dropout rate. 0.0 means no dropout applied.
+  use_weight_norm: true # Whether to use weight norm.
+  # If set to true, it will be applied to all of the conv layers.
+  upsample_net: "ConvInUpsampleNetwork" # Upsampling network architecture.
+  upsample_params:                      # Upsampling network parameters.
+    upsample_scales: [4, 4, 4, 4]     # Upsampling scales. Prodcut of these must be the same as hop size.
+
+
+max_tokens: 20000
+max_sentences: 5
+max_eval_sentences: 1

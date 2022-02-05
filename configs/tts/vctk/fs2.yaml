@@ -1,0 +1,7 @@
+base_config: configs/tts/fs2.yaml
+data_dir: 'data/vctk'
+raw_data_dir: 'data/raw/VCTK-Corpus'
+use_spk_embed: true
+num_spk: 400
+adapt_prefixes: []
+

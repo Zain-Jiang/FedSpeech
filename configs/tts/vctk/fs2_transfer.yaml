@@ -1,0 +1,35 @@
+base_config: configs/tts/fs2.yaml
+data_dir: 'data/vctk'
+raw_data_dir: 'data/raw/VCTK-Corpus'
+use_spk_embed: true
+num_spk: 400
+adapt_prefixes: []
+vocoder: custompwg
+vocoder_ckpt: checkpoints/0717_vctkpwgk3_1
+
+use_spk_id: true
+use_energy_embed: False
+
+max_tokens: 24000
+
+val_check_interval: 1000
+num_sanity_val_steps: 30
+
+last_steps: 0
+spk_step: 0
+switch_spk: False
+average: False
+accumulate_grad_batches: 1
+lwf_threhold: 1.5
+mode: 'finetune'
+piggy: ''
+selective: ''
+record_name: ''
+hat_scale_rate: 1
+max_scale_rate: 400
+spk_id: []
+
+pruning_step_num: 3000
+initial_sparsity: 0.0
+target_sparsity: 0.7
+transfer_at_spkid: [3]

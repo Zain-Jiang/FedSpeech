@@ -1,0 +1,7 @@
+base_config: configs/tts/pwg.yaml
+data_dir: 'data/vctk-wav'
+raw_data_dir: 'data/raw/VCTK-Corpus'
+adapt_prefixes: []
+num_spk: 400
+max_samples: 20480
+max_eval_samples: 20480
