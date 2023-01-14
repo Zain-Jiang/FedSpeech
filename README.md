@@ -1,5 +1,5 @@
 # FedSpeech 👋
-This is the supplementary materials of "FedSpeech: Federated Text-to-Speech with Continual Learning"
+This is the official implementation for the paper "FedSpeech: Federated Text-to-Speech with Continual Learning"
 
 ## Content
 1. Implementation of FedSpeech
